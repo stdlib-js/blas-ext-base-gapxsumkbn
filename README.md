@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@deno/mod.js';
+import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.1.0-deno/mod.js';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@deno/mod.js';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.1.0-deno/mod.js';
 ```
 
 #### gapxsumkbn( N, alpha, x, stride )
@@ -157,7 +157,7 @@ var v = gapxsumkbn.ndarray( N, 5.0, x, 2, 1 );
 import randu from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-base-randu@deno/mod.js';
 import round from 'https://cdn.jsdelivr.net/gh/stdlib-js/math-base-special-round@deno/mod.js';
 import Float64Array from 'https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@deno/mod.js';
-import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@deno/mod.js';
+import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.1.0-deno/mod.js';
 
 var x;
 var i;
