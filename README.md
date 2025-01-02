@@ -33,7 +33,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Add a constant to each strided array element and compute the sum using an improved Kahan–Babuška algorithm.
+> Add a scalar constant to each strided array element and compute the sum using an improved Kahan–Babuška algorithm.
 
 <section class="intro">
 
@@ -69,15 +69,14 @@ To view installation and usage instructions specific to each branch build, be su
 var gapxsumkbn = require( '@stdlib/blas-ext-base-gapxsumkbn' );
 ```
 
-#### gapxsumkbn( N, alpha, x, stride )
+#### gapxsumkbn( N, alpha, x, strideX )
 
-Adds a constant to each strided array element and computes the sum using an improved Kahan–Babuška algorithm.
+Adds a scalar constant to each strided array element and computes the sum using an improved Kahan–Babuška algorithm.
 
 ```javascript
 var x = [ 1.0, -2.0, 2.0 ];
-var N = x.length;
 
-var v = gapxsumkbn( N, 5.0, x, 1 );
+var v = gapxsumkbn( x.length, 5.0, x, 1 );
 // returns 16.0
 ```
 
@@ -85,17 +84,14 @@ The function has the following parameters:
 
 -   **N**: number of indexed elements.
 -   **x**: input [`Array`][mdn-array] or [`typed array`][mdn-typed-array].
--   **stride**: index increment for `x`.
+-   **strideX**: stride length.
 
-The `N` and `stride` parameters determine which elements in `x` are accessed at runtime. For example, to access every other element in `x`,
+The `N` and stride parameters determine which elements in the strided array are accessed at runtime. For example, to access every other element:
 
 ```javascript
-var floor = require( '@stdlib/math-base-special-floor' );
-
 var x = [ 1.0, 2.0, 2.0, -7.0, -2.0, 3.0, 4.0, 2.0 ];
-var N = floor( x.length / 2 );
 
-var v = gapxsumkbn( N, 5.0, x, 2 );
+var v = gapxsumkbn( 4, 5.0, x, 2 );
 // returns 25.0
 ```
 
@@ -105,42 +101,35 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
-var floor = require( '@stdlib/math-base-special-floor' );
 
 var x0 = new Float64Array( [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ] );
 var x1 = new Float64Array( x0.buffer, x0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
 
-var N = floor( x0.length / 2 );
-
-var v = gapxsumkbn( N, 5.0, x1, 2 );
+var v = gapxsumkbn( 4, 5.0, x1, 2 );
 // returns 25.0
 ```
 
-#### gapxsumkbn.ndarray( N, alpha, x, stride, offset )
+#### gapxsumkbn.ndarray( N, alpha, x, strideX, offsetX )
 
-Adds a constant to each strided array element and computes the sum using an improved Kahan–Babuška algorithm and alternative indexing semantics.
+Adds a scalar constant to each strided array element and computes the sum using an improved Kahan–Babuška algorithm and alternative indexing semantics.
 
 ```javascript
 var x = [ 1.0, -2.0, 2.0 ];
-var N = x.length;
 
-var v = gapxsumkbn.ndarray( N, 5.0, x, 1, 0 );
+var v = gapxsumkbn.ndarray( x.length, 5.0, x, 1, 0 );
 // returns 16.0
 ```
 
 The function has the following additional parameters:
 
--   **offset**: starting index for `x`.
+-   **offsetX**: starting index.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the `offset` parameter supports indexing semantics based on a starting index. For example, to access every other value in `x` starting from the second value
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying buffer, the offset parameter supports indexing semantics based on a starting index. For example, to access every other element starting from the second element:
 
 ```javascript
-var floor = require( '@stdlib/math-base-special-floor' );
-
 var x = [ 2.0, 1.0, 2.0, -2.0, -2.0, 2.0, 3.0, 4.0 ];
-var N = floor( x.length / 2 );
 
-var v = gapxsumkbn.ndarray( N, 5.0, x, 2, 1 );
+var v = gapxsumkbn.ndarray( 4, 5.0, x, 2, 1 );
 // returns 25.0
 ```
 
@@ -166,18 +155,12 @@ var v = gapxsumkbn.ndarray( N, 5.0, x, 2, 1 );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-var randu = require( '@stdlib/random-base-randu' );
-var round = require( '@stdlib/math-base-special-round' );
-var Float64Array = require( '@stdlib/array-float64' );
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
 var gapxsumkbn = require( '@stdlib/blas-ext-base-gapxsumkbn' );
 
-var x;
-var i;
-
-x = new Float64Array( 10 );
-for ( i = 0; i < x.length; i++ ) {
-    x[ i ] = round( randu()*100.0 );
-}
+var x = discreteUniform( 10, -100, 100, {
+    'dtype': 'float64'
+});
 console.log( x );
 
 var v = gapxsumkbn( x.length, 5.0, x, 1 );
@@ -243,7 +226,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
