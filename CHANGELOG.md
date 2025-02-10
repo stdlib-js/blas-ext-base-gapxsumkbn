@@ -4,7 +4,17 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-01-20)
+## Unreleased (2025-02-10)
+
+<section class="features">
+
+### Features
+
+-   [`906a39e`](https://github.com/stdlib-js/stdlib/commit/906a39eec07e9c9550f6ab43197e1f75922fd920) - add accessor arrays support to `blas/ext/base/gapxsumkbn` [(#4888)](https://github.com/stdlib-js/stdlib/pull/4888)
+
+</section>
+
+<!-- /.features -->
 
 <section class="commits">
 
@@ -12,6 +22,8 @@
 
 <details>
 
+-   [`9d447dc`](https://github.com/stdlib-js/stdlib/commit/9d447dc24e6c56353c1dceae3bbfd88d11ce2066) - **docs:** update related packages sections [(#5151)](https://github.com/stdlib-js/stdlib/pull/5151) _(by stdlib-bot, Athan Reines)_
+-   [`906a39e`](https://github.com/stdlib-js/stdlib/commit/906a39eec07e9c9550f6ab43197e1f75922fd920) - **feat:** add accessor arrays support to `blas/ext/base/gapxsumkbn` [(#4888)](https://github.com/stdlib-js/stdlib/pull/4888) _(by Muhammad Haris)_
 -   [`d0c4941`](https://github.com/stdlib-js/stdlib/commit/d0c49411dbdee17017f411ca1c2d1acd0e4ccca9) - **refactor:** update `blas/ext/base/gapxsumkbn` to follow current project conventions [(#4358)](https://github.com/stdlib-js/stdlib/pull/4358) _(by Muhammad Haris, Athan Reines)_
 -   [`d3d3d14`](https://github.com/stdlib-js/stdlib/commit/d3d3d14939ac77ab7d5a4476551108f8ff1c3f1f) - **docs:** update related packages sections [(#4149)](https://github.com/stdlib-js/stdlib/pull/4149) _(by stdlib-bot, Philipp Burckhardt)_
 -   [`7e366ae`](https://github.com/stdlib-js/stdlib/commit/7e366ae8bd41439be0e99e958d1c3fbb1b7dd0c2) - **chore:** update package.json descriptions _(by Philipp Burckhardt)_
