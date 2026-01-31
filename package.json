@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/blas-ext-base-gapxsumkbn",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Add a scalar constant to each strided array element and compute the sum using an improved Kahan–Babuška algorithm.",
   "license": "Apache-2.0",
   "author": {
@@ -89,7 +89,6 @@
     "typed",
     "array"
   ],
-  "__stdlib__": {},
   "funding": {
     "type": "opencollective",
     "url": "https://opencollective.com/stdlib"
