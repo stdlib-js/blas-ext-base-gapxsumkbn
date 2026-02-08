@@ -48,13 +48,13 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@esm/index.mjs';
+import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.3.1-esm/index.mjs';
 ```
 
 You can also import the following named exports from the package:
 
 ```javascript
-import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@esm/index.mjs';
+import { ndarray } from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.3.1-esm/index.mjs';
 ```
 
 #### gapxsumkbn( N, alpha, x, strideX )
@@ -151,7 +151,7 @@ var v = gapxsumkbn.ndarray( 4, 5.0, x, 2, 1 );
 <script type="module">
 
 import discreteUniform from 'https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@esm/index.mjs';
-import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@esm/index.mjs';
+import gapxsumkbn from 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gapxsumkbn@v0.3.1-esm/index.mjs';
 
 var x = discreteUniform( 10, -100, 100, {
     'dtype': 'float64'
